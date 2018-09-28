@@ -16,6 +16,7 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        /*
         var div1 = document.getElementById('div1')
         div1.addEventListener('click',function(e){
             var target = e.target
@@ -47,7 +48,37 @@
         callback.fire('1')
         callback.fire('2')
         callback.fire('3')
-        callback.fire('4')
+        callback.fire('4')*/
+
+        var arr = [1,2,3]
+        var nodeList = document.getElementsByTagName('a')
+        var $a = $('a')
+
+        arr.forEach(function(item){
+            console.log(item)
+        })
+
+        for(let i = 0;i<nodeList.length;i++){
+            console.log(nodeList[i])
+        }
+
+        $a.each(function(index,item){
+            console.log(index,item)
+        })
+
+
+        function each(data){
+            var $data = $(data) //生成迭代器
+            $data.each(function(i,item){
+                console.log(i,item)
+            })
+        }
+        each(arr)
+        each(nodeList)
+        each($a)
+
+        //顺序遍历
+        // 使用者不必知道内部结构
 
     </script>
 </body>
