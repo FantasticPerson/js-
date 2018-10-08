@@ -22,6 +22,11 @@ module.exports = {
     devServer:{
         contentBase:path.join(__dirname,'./release'),//根目录
         open:true,
-        port:9000
+        port:9000,
+        proxy:{
+            '/api/*':{
+                target:'http://localhost:8880'
+            }
+        }
     }
 }
